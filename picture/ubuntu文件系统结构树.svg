@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Ubuntu 文件系统结构树</title>
+  <desc id="desc">以根目录为起点，按用户与应用、系统与配置、设备与内核、数据与挂载四类展示 Ubuntu 常用目录。</desc>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#20242A" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", sans-serif; }
+      .title { font-size: 42px; font-weight: 700; fill: #20242A; }
+      .subtitle { font-size: 19px; fill: #626871; }
+      .badge { font-size: 16px; font-weight: 600; fill: #9E3414; }
+      .root-path { font-size: 38px; font-weight: 800; fill: #FFFFFF; }
+      .root-name { font-size: 22px; font-weight: 700; fill: #FFFFFF; }
+      .root-desc { font-size: 15px; fill: #FFF1EC; }
+      .group-title { font-size: 22px; font-weight: 700; }
+      .group-note { font-size: 13px; fill: #626871; }
+      .path { font-size: 25px; font-weight: 750; fill: #20242A; }
+      .meaning { font-size: 15px; fill: #626871; }
+      .hint-title { font-size: 22px; font-weight: 700; fill: #20242A; }
+      .hint { font-size: 16px; fill: #4C525A; }
+      .footer { font-size: 13px; fill: #858B93; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1100" fill="#F7F8FA"/>
+  <rect x="0" y="0" width="14" height="1100" fill="#E95420"/>
+
+  <text class="title" x="54" y="62">Ubuntu 文件系统结构树</text>
+  <text class="subtitle" x="56" y="96">根目录 “/” 是共同起点，下列目录按用途分组展示</text>
+  <rect x="1300" y="42" width="244" height="42" rx="8" fill="#FFF1EC" stroke="#F0B39C"/>
+  <text class="badge" x="1422" y="69" text-anchor="middle">Ubuntu 22.04 · 教材示意图</text>
+
+  <!-- Tree connectors -->
+  <g fill="none" stroke="#AEB4BC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M800 215 V240"/>
+    <path d="M200 240 H1400"/>
+    <path d="M200 240 V270 M600 240 V270 M1000 240 V270 M1400 240 V270"/>
+
+    <path d="M200 340 V355 H55 V770"/>
+    <path d="M55 410 H75 M55 530 H75 M55 650 H75 M55 770 H75"/>
+
+    <path d="M600 340 V355 H455 V770"/>
+    <path d="M455 410 H475 M455 530 H475 M455 650 H475 M455 770 H475"/>
+
+    <path d="M1000 340 V355 H855 V770"/>
+    <path d="M855 410 H875 M855 530 H875 M855 650 H875 M855 770 H875"/>
+
+    <path d="M1400 340 V355 H1255 V770"/>
+    <path d="M1255 410 H1275 M1255 530 H1275 M1255 650 H1275 M1255 770 H1275"/>
+  </g>
+
+  <!-- Root -->
+  <g filter="url(#shadow)">
+    <rect x="620" y="125" width="360" height="90" rx="8" fill="#E95420"/>
+    <text class="root-path" x="660" y="180">/</text>
+    <text class="root-name" x="710" y="163">根目录 ROOT</text>
+    <text class="root-desc" x="710" y="191">整个 Ubuntu 文件系统的共同起点</text>
+  </g>
+
+  <!-- Group headers -->
+  <g>
+    <rect x="35" y="270" width="330" height="70" rx="8" fill="#FFF1EC" stroke="#E95420" stroke-width="2"/>
+    <text class="group-title" x="200" y="303" text-anchor="middle" fill="#9E3414">用户与应用</text>
+    <text class="group-note" x="200" y="325" text-anchor="middle">个人文件、程序与独立软件</text>
+
+    <rect x="435" y="270" width="330" height="70" rx="8" fill="#F4EDF4" stroke="#5E2750" stroke-width="2"/>
+    <text class="group-title" x="600" y="303" text-anchor="middle" fill="#5E2750">系统与配置</text>
+    <text class="group-note" x="600" y="325" text-anchor="middle">系统命令、配置与基础库</text>
+
+    <rect x="835" y="270" width="330" height="70" rx="8" fill="#EAF7F7" stroke="#167D86" stroke-width="2"/>
+    <text class="group-title" x="1000" y="303" text-anchor="middle" fill="#11646B">设备与内核</text>
+    <text class="group-note" x="1000" y="325" text-anchor="middle">硬件接口、进程与运行状态</text>
+
+    <rect x="1235" y="270" width="330" height="70" rx="8" fill="#EEF3FA" stroke="#275D9C" stroke-width="2"/>
+    <text class="group-title" x="1400" y="303" text-anchor="middle" fill="#275D9C">数据与挂载</text>
+    <text class="group-note" x="1400" y="325" text-anchor="middle">变化数据、临时文件与磁盘</text>
+  </g>
+
+  <!-- User and application nodes -->
+  <g filter="url(#shadow)">
+    <rect x="75" y="370" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="75" y="370" width="8" height="80" rx="4" fill="#E95420"/>
+    <text class="path" x="102" y="405">/home</text>
+    <text class="meaning" x="102" y="431">普通用户的家目录</text>
+
+    <rect x="75" y="490" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="75" y="490" width="8" height="80" rx="4" fill="#E95420"/>
+    <text class="path" x="102" y="525">/root</text>
+    <text class="meaning" x="102" y="551">root 用户的家目录</text>
+
+    <rect x="75" y="610" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="75" y="610" width="8" height="80" rx="4" fill="#E95420"/>
+    <text class="path" x="102" y="645">/usr</text>
+    <text class="meaning" x="102" y="671">程序、库与共享资源</text>
+
+    <rect x="75" y="730" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="75" y="730" width="8" height="80" rx="4" fill="#E95420"/>
+    <text class="path" x="102" y="765">/opt</text>
+    <text class="meaning" x="102" y="791">ROS2 等独立安装软件</text>
+  </g>
+
+  <!-- System and configuration nodes -->
+  <g filter="url(#shadow)">
+    <rect x="475" y="370" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="475" y="370" width="8" height="80" rx="4" fill="#5E2750"/>
+    <text class="path" x="502" y="405">/etc</text>
+    <text class="meaning" x="502" y="431">系统与服务配置</text>
+
+    <rect x="475" y="490" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="475" y="490" width="8" height="80" rx="4" fill="#5E2750"/>
+    <text class="path" x="502" y="525">/bin</text>
+    <text class="meaning" x="502" y="551">常用基本命令</text>
+
+    <rect x="475" y="610" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="475" y="610" width="8" height="80" rx="4" fill="#5E2750"/>
+    <text class="path" x="502" y="645">/sbin</text>
+    <text class="meaning" x="502" y="671">系统管理命令</text>
+
+    <rect x="475" y="730" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="475" y="730" width="8" height="80" rx="4" fill="#5E2750"/>
+    <text class="path" x="502" y="765">/lib</text>
+    <text class="meaning" x="502" y="791">基础共享库与内核模块</text>
+  </g>
+
+  <!-- Device and kernel nodes -->
+  <g filter="url(#shadow)">
+    <rect x="875" y="370" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="875" y="370" width="8" height="80" rx="4" fill="#167D86"/>
+    <text class="path" x="902" y="405">/dev</text>
+    <text class="meaning" x="902" y="431">串口、相机等设备文件</text>
+
+    <rect x="875" y="490" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="875" y="490" width="8" height="80" rx="4" fill="#167D86"/>
+    <text class="path" x="902" y="525">/proc</text>
+    <text class="meaning" x="902" y="551">进程与内核运行信息</text>
+
+    <rect x="875" y="610" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="875" y="610" width="8" height="80" rx="4" fill="#167D86"/>
+    <text class="path" x="902" y="645">/sys</text>
+    <text class="meaning" x="902" y="671">硬件、驱动与内核接口</text>
+
+    <rect x="875" y="730" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="875" y="730" width="8" height="80" rx="4" fill="#167D86"/>
+    <text class="path" x="902" y="765">/run</text>
+    <text class="meaning" x="902" y="791">本次启动的运行状态</text>
+  </g>
+
+  <!-- Data and mount nodes -->
+  <g filter="url(#shadow)">
+    <rect x="1275" y="370" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="1275" y="370" width="8" height="80" rx="4" fill="#275D9C"/>
+    <text class="path" x="1302" y="405">/var</text>
+    <text class="meaning" x="1302" y="431">日志等持续变化的数据</text>
+
+    <rect x="1275" y="490" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="1275" y="490" width="8" height="80" rx="4" fill="#275D9C"/>
+    <text class="path" x="1302" y="525">/tmp</text>
+    <text class="meaning" x="1302" y="551">可能被清理的临时文件</text>
+
+    <rect x="1275" y="610" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="1275" y="610" width="8" height="80" rx="4" fill="#275D9C"/>
+    <text class="path" x="1302" y="645">/mnt</text>
+    <text class="meaning" x="1302" y="671">手动挂载设备的位置</text>
+
+    <rect x="1275" y="730" width="290" height="80" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+    <rect x="1275" y="730" width="8" height="80" rx="4" fill="#275D9C"/>
+    <text class="path" x="1302" y="765">/media</text>
+    <text class="meaning" x="1302" y="791">桌面自动挂载可移动设备</text>
+  </g>
+
+  <!-- Reading hints -->
+  <rect x="50" y="860" width="1500" height="180" rx="8" fill="#FFFFFF" stroke="#D5D9DE"/>
+  <text class="hint-title" x="80" y="903">阅读提示</text>
+
+  <circle cx="86" cy="943" r="5" fill="#E95420"/>
+  <text class="hint" x="103" y="949">彩色分类只是为了帮助理解，</text>
+  <text class="hint" x="103" y="975">并不是文件系统中的真实目录。</text>
+
+  <circle cx="574" cy="943" r="5" fill="#167D86"/>
+  <text class="hint" x="591" y="949">/proc、/sys、/run 主要展示运行信息，</text>
+  <text class="hint" x="591" y="975">不要把普通项目和资料放在其中。</text>
+
+  <circle cx="1080" cy="943" r="5" fill="#275D9C"/>
+  <text class="hint" x="1097" y="949">/tmp 可能被清理；个人项目与数据应</text>
+  <text class="hint" x="1097" y="975">优先放在 /home/用户名 对应的家目录。</text>
+
+  <text class="footer" x="1548" y="1080" text-anchor="end">Artlnnov 算法组教材 · 第 2 章</text>
+</svg>
