@@ -3,7 +3,7 @@
   本人github：https://github.com/HGZQ1  
   __时间：2026.01.29__  
   __广州美术学院 艺创RC2026视觉组__  
-  >本项目仅用于学习，有误处请指正，希望能看懂孩子们  
+  >本项目仅用于学习，有误处请指正，希望能看懂孩子们，建议跟着我的步骤安装，否则容易出现奇奇怪怪问题  
 
 __对于装双系统这个事并不要觉得很难，ubuntu系统是视觉组的同学们必须要学会使用的操作系统，可能大多数同学都是用习惯了win，对于一个新的操作系统可能会有抗拒和害怕，但是ubuntu系统只要深入了解和学习，你将会发现它其实操作起来并不比win难，重要就是跳出win的舒适圈。__  
 
@@ -201,13 +201,11 @@ https://blog.csdn.net/weixin_44781249/article/details/138048333
 
 
    
----  
-## 二, Ubuntu深度学习环境配置(cuda,cudnn,python,anaconda,ros,opencv)  
-根据自己需要安装的环境自己添加。  
-### 安装Visual Studio Code(vscode微软大战代码)必下✨  
+---    
+# 安装Visual Studio Code(vscode微软大战代码)必下✨  
    访问官网下载安装包  https://code.visualstudio.com/download  
 <img src=".\picture\2026-02-02 212855.png" alt="喵" >  
 下载**linux**的.deb安装包，然后双击安装  
 下载好后找到你的安装包的位置，然后右键安装包，选择在**终端中打开** 输入```sudo dpkg -i c```然后按下**Tab**键自动补全，然后回车。  
 安装好后输入```code```就会打开vscode了。  
-<img src=".\picture\2026-02-02 213919.png" alt="喵" >  
+<img src=".\picture\2026-02-02 213919.png" alt="喵" > 
