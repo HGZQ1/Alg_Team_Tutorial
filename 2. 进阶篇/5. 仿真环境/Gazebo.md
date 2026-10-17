@@ -127,26 +127,26 @@ ros2 pkg create robot_description --build-type ament_cmake --license Apache-2.0
     <visual> 
       <geometry> 
       <!-- 定义一个简单的立方体作为机器人的基础 -->
-        <box size="0.5 0.3 0.1"/>
+        <box size="0.5 0.3 0.4"/>
       </geometry> 
       <!-- 定义机器人的颜色和材质 -->
-      <material name="blue"/>
-          <color rgba="0 0 1 1"/>
-        </material>
-      </visual>
-    </link> 
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+  </link> 
 
     <!-- 定义机器人IMU传感器部分 --> 
     <link name="imu_link">
       <visual>
+        <!-- 视觉几何相对于 imu_link 的位置 -->
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <!-- 沿自己几何中心的偏移与旋转量，定义这个是因为有些传感器传感部分并非完全在几何中心 -->
-          <origin xyz="0 0 0" rpy="0 0 0"/>
           <!-- 定义一个简单的圆柱体作为IMU传感器 -->
-          <cylinder length="0.02" radius="0.05"/>
+          <cylinder length="0.2" radius="0.1"/>
         </geometry>
-        <material name="gray"/>
-          <color rgba="0.5 0.5 0.5 1"/>
+        <material name="orange">
+          <color rgba="1 0.4 0 1"/>
         </material>
       </visual>
     </link>
@@ -158,12 +158,15 @@ ros2 pkg create robot_description --build-type ament_cmake --license Apache-2.0
       <!-- 定义子关节为imu_link -->
       <child link="imu_link"/>
       <!-- 子部件相对于父部件的平移和旋转，因为不可能所有部件都是恰好安放在base_link这个点上 -->
-      <origin xyz="0 0 0.06" rpy="0 0 0"/> 
+      <origin xyz="0 0 0.3" rpy="0 0 0"/> 
     </joint>
 <!-- 所以上面就定义了一个简单的机器人，它的主要结构是一个立方体，尺寸0.5 0.3 0.1，蓝色；上面搭载了一个圆柱体IMU，高0.02，半径0.05，位于相对于机器人的base_link高0.06位置-->
 </robot> 
 ``` 
-然后打开RVIZ,在RVIZ的display模块中找到RobotModel模块，修改Description Source为File，然后在Description File中选择我们的这个文件加载URDF并显示，这样你就可以看到我们做的机器人模型了。 
+然后打开RVIZ,在RVIZ的display模块中找到RobotModel模块，修改Description Source为File，然后在Description File中选择我们的这个文件加载URDF并显示，最上面的改为base_link,这样你就可以看到我们做的机器人模型了。 
+
+<img src="../../picture/Screenshot from 2026-10-18 00-57-47.png"> 
+
 
 |标签|人话|
 |---|---|
