@@ -110,7 +110,7 @@ Gazebo通过订阅ROS2话题来获取控制指令，并通过发布话题来输�
 
 下面会给出一个简化的URDF示例，展示如何定义一个简单的移动机器人模型：
 
-创建一个robot_description功能包
+在你的学习ros2的文件夹中创建一个robot_description功能包
 ```bash 
 ros2 pkg create robot_description --build-type ament_cmake --license Apache-2.0
 ```
@@ -180,9 +180,36 @@ ros2 pkg create robot_description --build-type ament_cmake --license Apache-2.0
 |geometry	|形状（球体、立方体、网格等）
 |mesh|网格体（可以直接链接到SW模型）
 
+所以是不是感觉URDF很简单。
 
 ## Xacro 
-在原生URDF文件描述复杂机器人时，存在严重的手工维护缺陷，也就是URDF
+
+安装 
+```bash
+sudo apt install ros-$ROS_DISTRO-xacro
+```
+在原生URDF文件描述复杂机器人时，存在严重的手工维护缺陷，对于正常人来说维护是灾难级的（别想着AI能帮你）。URDF极度沉长和重复，对于一个复杂机器人往往需要几千行的代码进行描述，一个参数出问题了根本不好修改，且一个URDF只有一个< robot >标签难以构建复合机器人场景，故得出“天下苦URDF久矣”。（你帮机械组的修过urdf文件你就知道痛苦了） 
+
+Xarco通过引入编程的特性，将URDF从“手写描述”升级为“代码生成”。 
+- **宏定义和复用**：可以将重复的结构（例如机械臂的一个关节，轮子）封装为宏。定义一次即可通过传参多次调用，极大提高了代码复用率和维护效率（简单来说相当于可以像调用库一样）。
+- **参数化数学运算**：支持定义变量，并在其中加入数学表达式。 
+- **模块化文件组织**：支持文件包含（xacro:property）,可将复杂机器人拆为底盘、机械臂等独立文件进行管理和组装。 
+- **编程逻辑支持**：支持条件判断、循环，甚至嵌入python代码 
+
+Xacro并非代替URDF，ROS底层还是只认URDF，使用时需要通过xacro工具转换回URDF才能用，当前直接编写Xacro并生成URDF才是通用的工作流。
+
+在你刚刚的urdf文件夹下面再创建一个文件：nb_robot.urdf.xacro 
+复制以下代码 
+```xml
+```
+这时你就有了一个xacro文件，但是xacro不能直接当作URDF使用，还需解析，
+完成后终端进入到你放urdf的文件夹目录，运行 
+```bash
+xacro nb_robot.urdf.xacro
+``` 
+即可将xacro解析为URDF
+
+完整案例：https://github.com/HGZQ1/Agricultural-Bot/blob/main/Agricultural_Bot/ros2_ws/src/agri_robot_description/urdf/agri_robot.urdf.xacro
 
 
 ## SDF 
@@ -197,4 +224,6 @@ SDF 由 Gazebo 提出，适用于更复杂的仿真场景。相比 URDF，SDF �
 - 可以直接在Gazebo中使用，无需转换。
 - 采用 XML 结构，类似于 URDF，但功能更丰富。
 
-实际案例：https://github.com/HGZQ1/Agricultural-Bot/blob/main/Agricultural_Bot/sim_ws/src/agri_greenhouse_worlds/models/tomato_0/model.sdf
+实际案例：https://github.com/HGZQ1/Agricultural-Bot/blob/main/Agricultural_Bot/sim_ws/src/agri_greenhouse_worlds/models/tomato_0/model.sdf 
+
+111
