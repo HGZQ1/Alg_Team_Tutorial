@@ -1,4 +1,5 @@
 # Isaac Gym
+> from 南华 uwvwko
 
 ## 简介
 **Isaac Gym 是 NVIDIA 出的一款 GPU 加速的机器人物理仿真器**，它是 NVIDIA Isaac 系列的一员，最大的特点是**把物理仿真和强化学习训练全部放在 GPU 上跑**，不需要 CPU 参与中间环节。

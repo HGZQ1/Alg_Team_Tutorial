@@ -1,4 +1,5 @@
 # MuJoCo
+> from 南华 uwvwko
 
 ## 简介
 **MuJoCo（Multi-Joint dynamics with Contact）是一个老牌的高性能物理仿真器**，最早由华盛顿大学 Roboti LLC 开发，主打**接触动力学的精度和速度**。2021 年 DeepMind 收购了它，2022 年起**完全开源免费**（Apache 2.0 协议），从此成为学术界最流行的机器人仿真器之一。
